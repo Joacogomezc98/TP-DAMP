@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar *ngIf="device">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="device">
+  <ion-card>
+    <ion-card-header>
+      <ion-item class="p-1">
+        <div class="view-device-header">
+          <!-- HEADER LEFT -->
+          <div class="view-device-header left">
+            <img
+              src="assets/icon/manometro.png"
+              alt="manometro"
+            />
+            <ion-label>
+              <h2>{{ device.nombre }}</h2>
+              <h3>Ubicacion: <ion-note>{{device.ubicacion}}</ion-note></h3>
+            </ion-label>
+          </div>
+          <!-- HEADER RIGHT -->
+          <div>
+            <ion-toggle [(ngModel)]="valveState" (ionChange)="handleValve(device.electrovalvulaId)">
+              <div  [appTextColor]="valveState">
+                {{ valveState ? 'Cerrar' : 'Abrir' }} valvula
+              </div>
+            </ion-toggle>
+          </div>
+        </div>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content style="display: flex; flex-direction:column">
+      <app-detalle-sensor></app-detalle-sensor>
+      <ion-button (click)="buttonClicked(1)">VER TODAS LAS MEDICIONES</ion-button>
+      <ion-button (click)="buttonClicked(2)">VER LOG RIEGOS</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

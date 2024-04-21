@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="device">Mediciones de {{device.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-grid class="custom-table">
+      <ion-row class="table-header">
+        <ion-col size="5"><b>Fecha</b></ion-col>
+        <ion-col size="7"><b>Valor</b></ion-col>
+      </ion-row>
+      <ion-row *ngFor="let measurement of measurements" class="table-row">
+        <ion-col size="5">{{ measurement.fecha | date2string }}</ion-col>
+        <ion-col size="7">{{ measurement.valor }}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>
+

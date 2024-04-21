@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Logs de electrovalvula: {{electrovalvulaId}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let log of logs">
+      <!-- Mostrar detalles de cada log -->
+      <ion-label>{{ log.fecha | date2string }}: {{ log.apertura === 1 ? 'OPENED'  : 'CLOSED' }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

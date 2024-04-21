@@ -1,0 +1,28 @@
+img {
+    height: 50px;
+}
+
+.view-device-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .view-device-header .left {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+h2{
+    font-size: 1.2rem;
+}
+h3{
+    font-size: 1rem;
+}

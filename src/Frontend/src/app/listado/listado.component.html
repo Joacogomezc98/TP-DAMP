@@ -1,0 +1,9 @@
+<ion-list lines="full">
+  <ion-item *ngFor="let device of devices" (click)="goToDevice(device.dispositivoId)" class="row">
+    <img src="assets/icon/sensor.png" alt="sensor"/>
+    <ion-label>
+      <h2>{{ device.nombre | capitalize }}</h2>
+      <p>Ubicación: {{ device.ubicacion }}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>
